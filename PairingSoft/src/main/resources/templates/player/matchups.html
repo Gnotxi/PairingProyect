@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- 	<nombre>Ranking mejores jugadores</nombre> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 align="left"> Lista de enfrentamientos </h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<table class="table">
+				<thead>
+					<tr>
+						<th> Equipo local </th>
+						<th> Elo total </th>
+						<th>  </th>
+						<th>  </th>
+						<th> VS </th>
+						<th>  </th>
+						<th>  </th>
+						<th> Equipo Visitante </th>
+						<th> Elo total</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="matchup : ${game.matchups}">
+						<td><span th:text="${matchup.equipoLocal.nombreEquipo}">  </span></td>
+						<td><span th:text="${matchup.equipoLocal.eloEquipo}"> </span></td>
+						<td></td>
+						<td></td>
+						<td>VS</td>
+						<td></td>
+						<td></td>												
+						<td><span th:text="${matchup.equipoVisitante.nombreEquipo}">  </span></td>
+						<td><span th:text="${matchup.equipoVisitante.eloEquipo}"> </span></td>
+					</tr>
+				</tbody>
+		</table>
+		<a class="btn btn-info" href="#" th:href="@{/bestplayers}"> Ver ranking mejores jugadores </a>
+		<a class="btn btn-info" href="#" th:href="@{/}"> Inicio </a>

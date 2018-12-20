@@ -1,0 +1,40 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1> Ranking 5 mejores jugadores </h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<table class="table" >
+				<thead>
+					<tr>
+						<th> Elo </th>
+						<th> Nombre jugador </th>
+						<th> apellido </th>
+						<th> rapidez </th>
+						<th> ingenio </th>
+						<th> Tipo de jugador </th>
+					</tr>
+				</thead>
+				<tbody>
+				<span th:each="player : ${players}">
+					<tr > 
+						<td><span th:text="${player.eloJugador}">  </span></td>
+						<td><span th:text="${player.nombre}"> </span></td>
+						<td><span th:text="${player.apellido}"> </span></td>
+						<td><span th:text="${player.ingenio}"> </span></td>
+						<td><span th:text="${player.rapidez}"> </span></td>
+						<td><span th:text="${player.tipoJugador}"> </span></td>
+					</tr>
+					</span>
+				</tbody>
+		</table>
+        <div class="container">
+			<a class="btn btn-info" href="#" th:href="@{/}"> Inicio </a>
+        </div>
